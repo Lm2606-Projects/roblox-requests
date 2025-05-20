@@ -1,7 +1,6 @@
 {
   "name": "roblox-requests",
   "tree": {
-    "$className": "ModuleScript",
     "$path": "./http"
   }
 }
