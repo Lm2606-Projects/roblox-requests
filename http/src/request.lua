@@ -166,7 +166,7 @@ function Request:_send()
 			local resp = Response.new(self, data, tick()-st)
 			resp.from_cache = true
 
-			print("[http]", cache_type:upper(), "CACHE |", resp.method, resp.url)
+			print("[http]", cache_type:upper(), "CACHE |", resp.method, resp.url:match("^[^%?]+") or resp.url)
 			return resp
 		end
 	end
@@ -199,7 +199,7 @@ function Request:_send()
 	if self._log then
 		local rl = tostring(math.floor(self._ratelimits[#self._ratelimits]:consumption()*1000)*0.1) .. "%"
 
-		print("[http]", resp.code, resp.message, "|", resp.method, resp.url, "(", rl, "ratelimit )")
+		print("[http]", resp.code, resp.message, "|", resp.method, resp.url:match("^[^%?]+") or resp.url, "(", rl, "ratelimit )")
 	end
 
 	if self._callback then

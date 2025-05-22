@@ -211,7 +211,7 @@ function Cache.get_cached(url, req_id)
 end
 
 function Cache.update_cache(url, req_id, data)
-    print(("[http] %s added to cache"):format(url))
+    print(("[http] %s added to cache"):format(url:match("^[^%?]+") or url))
     
     data.timestamp = tick()
 
