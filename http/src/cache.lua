@@ -3,7 +3,7 @@ local DS = game:GetService("DataStoreService")
 local RS = game:GetService("RunService")
 
 local json = require(script.Parent.json)
-----------------------------------------------
+
 
 local STUDIO = RS:IsStudio()
 

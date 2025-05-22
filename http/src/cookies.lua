@@ -1,10 +1,10 @@
 -- cookie jar class --
-----------------------
+
 
 local Main = script.Parent.Parent
 local Lib = Main.lib
 local Src = Main.src
----------------------------------
+
 
 local json = require(Src.json)
 local Url = require(Lib.url)

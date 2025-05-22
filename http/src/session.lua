@@ -3,7 +3,7 @@
 local Main = script.Parent.Parent
 local Lib = Main.lib
 local Src = Main.src
----------------------------------
+
 
 local Request = require(Src.request)
 local CookieJar = require(Src.cookies)
@@ -45,7 +45,7 @@ function Session.new(base_url)
 
 	self.log = true
 
-	-----------
+	
 	return self
 end
 
@@ -168,5 +168,5 @@ for _, method in pairs({"GET", "POST", "HEAD", "OPTIONS", "PUT", "DELETE", "PATC
 	end
 end
 
---------------
+
 return Session

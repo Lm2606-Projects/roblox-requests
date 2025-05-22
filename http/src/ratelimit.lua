@@ -101,5 +101,5 @@ function RateLimiter:request()
     end
 end
 
-------------------
+
 return RateLimiter

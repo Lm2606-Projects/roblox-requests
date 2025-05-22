@@ -1,7 +1,7 @@
 local Main = script.Parent.Parent
 local Lib = Main.lib
 local Src = Main.src
------------------------------------------------------
+
 
 local CaseInsensitive = require(Lib.nocasetable)
 local html = require(Lib.html)
@@ -9,7 +9,7 @@ local html = require(Lib.html)
 local json = require(Src.json)
 local CookieJar = require(Src.cookies)
 
------------------------------------------------------
+
 
 local html_types = {"text/html", "application/xhtml+xml"}
 
@@ -104,6 +104,6 @@ function Response:xml(ignore_content_type)
 	end
 end
 
----------------
+
 
 return Response

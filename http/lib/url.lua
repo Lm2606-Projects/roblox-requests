@@ -9,14 +9,14 @@
 local M = {}
 M.version = "0.9.0"
 
---- url options
+-- url options
 -- separator is set to `&` by default but could be anything like `&amp;amp;` or `;`
 -- @todo Add an option to limit the size of the argument table
 M.options = {
 	separator = '&'
 }
 
---- list of known and common scheme ports
+-- list of known and common scheme ports
 -- as documented in <a href="http://www.iana.org/assignments/uri-schemes.html">IANA URI scheme list</a>
 M.services = {
 	acap     = 674,
@@ -93,7 +93,7 @@ local function concat(s, u)
 	return s .. u:build()
 end
 
---- builds the url
+-- builds the url
 -- @return a string representing the built url
 function M:build()
 	local url = ''
@@ -140,7 +140,7 @@ function M:build()
 	return url
 end
 
---- builds the querystring
+-- builds the querystring
 -- @param tab The key/value parameters
 -- @param sep The separator to use (optional)
 -- @param key The parent key if the value is multi-dimensional (optional)
@@ -175,7 +175,7 @@ function M.buildQuery(tab, sep, key)
 	return table.concat(query, sep)
 end
 
---- Parses the querystring to a table
+-- Parses the querystring to a table
 -- This function can parse multidimensional pairs and is mostly compatible
 -- with PHP usage of brackets in key names like ?param[key]=value
 -- @param str The querystring to parse
@@ -235,7 +235,7 @@ function M.parseQuery(str, sep)
 	return values
 end
 
---- set the url query
+-- set the url query
 -- @param query Can be a string to parse or a table of key/value pairs
 -- @return a table representing the query key/value pairs
 function M:setQuery(query)
@@ -247,7 +247,7 @@ function M:setQuery(query)
 	return query
 end
 
---- set the authority part of the url
+-- set the authority part of the url
 -- The authority is parsed to find the user, password, port and host if available.
 -- @param authority The string representing the authority
 -- @return a string with what remains after the authority was parsed
@@ -286,7 +286,7 @@ function M:setAuthority(authority)
 	return authority
 end
 
---- Parse the url into the designated parts.
+-- Parse the url into the designated parts.
 -- Depending on the url, the following parts can be available:
 -- scheme, userinfo, user, password, authority, host, port, path,
 -- query, fragment
@@ -324,7 +324,7 @@ function M.parse(url)
 	return comp
 end
 
---- removes dots and slashes in urls when possible
+-- removes dots and slashes in urls when possible
 -- This function will also remove multiple slashes
 -- @param path The string representing the path to clean
 -- @return a string of the path without unnecessary dots and segments
@@ -403,7 +403,7 @@ local function absolutePath(base_path, relative_path)
 	return '/' .. path
 end
 
---- builds a new url by using the one given as parameter and resolving paths
+-- builds a new url by using the one given as parameter and resolving paths
 -- @param other A string or a table representing a url
 -- @return a new url table
 function M:resolve(other)
@@ -433,7 +433,7 @@ function M:resolve(other)
 	end
 end
 
---- normalize a url path following some common normalization rules
+-- normalize a url path following some common normalization rules
 -- described on <a href="http://en.wikipedia.org/wiki/URL_normalization">The URL normalization page of Wikipedia</a>
 -- @return the normalized path
 function M:normalize()

@@ -106,7 +106,7 @@ local function parse(text, limit, page_url) -- {{{
             i = i + skip
         until (i == 255) -- }}}
         i = nil
-        --- }}}
+        -- }}}
 
         if not (tpr["<"]) or not (tpr[">"]) then
             err(
